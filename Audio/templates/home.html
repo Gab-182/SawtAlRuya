@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Flask App</title>
+    <!-- Include any CSS or other head elements here -->
+</head>
+<body>
+    <header>
+        <h1>Welcome to My Flask App</h1>
+    </header>
+    <nav>
+        <!-- Navigation menu here -->
+    </nav>
+    <main>
+        <h2>Home Page</h2>
+        <!-- Add an audio element to play the audio -->
+        <audio controls autoplay>
+            <source src="{{ url_for('serve_content') }}" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        <p>Hello, Shatha!</p>
+        <!-- Other content here -->
+    </main>
+    <footer>
+        <p>&copy; 2023 My Flask App</p>
+    </footer>
+    <!-- Include any JavaScript or other footer elements here -->
+</body>
+</html>

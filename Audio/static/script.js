@@ -1,30 +1,31 @@
+
 // // static/script.js
 // document.addEventListener('DOMContentLoaded', () => {
-//     // Automatically trigger file upload when the page loads
-//     autoUploadAndPlay();
-    
-//     function autoUploadAndPlay() {
-//         fetch('/get_processed_audio')
-//             .then(response => response.json())
-//             .then(data => {
-//                 if (data.success) {
-//                     let audio = new Audio(data.audio_url);
-//                     audio.play();
-//                 }
-//             })
-//             .catch((error) => {
-//                 console.error('Error:', error);
-//             });
-//     }
+//     const audioElement = document.querySelector('audio');
+//     audioElement.src = '/'; // Set the root route as the audio source
 // });
 
-// static/script.js
+// function playAudio() {
+//     const audioElement = document.querySelector('audio');
+//     audioElement.play();
+// }
+
 document.addEventListener('DOMContentLoaded', () => {
     const audioElement = document.querySelector('audio');
     audioElement.src = '/'; // Set the root route as the audio source
+    audioElement.onplay = () => console.log("Audio started playing.");
+    audioElement.onerror = (e) => console.log("Error playing audio:", e);
 });
 
 function playAudio() {
     const audioElement = document.querySelector('audio');
-    audioElement.play();
+    const promise = audioElement.play();
+    
+    if (promise !== undefined) {
+        promise.then(_ => {
+            console.log("Playback started successfully");
+        }).catch(error => {
+            console.error("Playback failed:", error);
+        });
+    }
 }

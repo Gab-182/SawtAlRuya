@@ -25,6 +25,7 @@ import os
 from flask import Flask, jsonify
 from flask import Flask, send_from_directory, request
 from textToSpeech import textToSpeech  # Assuming you have a textToSpeech function
+from flask import send_file
 
 app = Flask(__name__)
 
@@ -52,6 +53,19 @@ def serve_content():
             return send_from_directory(os.path.dirname(error_audio), os.path.basename(error_audio))
     else:
         return send_from_directory('static', 'index.html')
+
+@app.route('/get_audio', methods=['GET'])
+def serve_audio():
+    processed_audio_path = generate_audio_description()
+    error_audio = 'error.mp3'
+    # Check if the processed audio file exists
+    if os.path.exists(processed_audio_path):
+        return send_file(processed_audio_path, as_attachment=True)
+    else:
+        return send_file(error_audio, as_attachment=True)
+
+    # If the request is not for audio, return something else (e.g., a message)
+    return "This is not an audio request."
 
 if __name__ == "__main__":
     app.run(debug=True)
