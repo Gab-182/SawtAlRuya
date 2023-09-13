@@ -1,7 +1,6 @@
 # SawtAlRuya
 ## Computer vision hackathon project
 
--------------
 
 This project utilizes the Hugging Face Transformers library to perform image captioning using the Salesforce/blip-image-captioning-base model. It captures images from a webcam, generates image captions, and displays the results.
 
