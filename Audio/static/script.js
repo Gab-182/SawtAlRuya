@@ -22,9 +22,18 @@
 document.addEventListener('DOMContentLoaded', () => {
     const audioSource = document.getElementById('audioSource');
     
-    // Set the src attribute of the audio element to the processed audio URL
-    audioSource.src = processed_audio_url;
-
-    // Play the audio automatically
-    audioSource.play();
+    fetch('/')
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                audioSource.src = data.audio_url;
+                audioSource.play(); // Play only if the audio file exists
+            } else {
+                console.error(data.error);
+                // Handle the case where the audio file doesn't exist
+            }
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+        });
 });
