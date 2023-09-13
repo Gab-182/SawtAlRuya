@@ -16,20 +16,19 @@ def preparePrompt(logs):
 def AIprompt(msg):
     response = palm.chat(messages=msg)
     return response.last
-# Text you want to convert to speech
 
-# Create a gTTS object
-
+def textToSpeech(text, filename):
+    tts = gTTS(text)
+    tts.save(filename + ".mp3")
+    os.system("open " + filename + ".mp3")
+    return filename
 
 
 def voiceChatWithPalm():
     while 1:
-        txt = input("salemGPTVoice>")
-        text = AIprompt(txt)
-        tts = gTTS(text)
-        tts.save("output.mp3")
-        os.system("open output.mp3")  # Example for Linux
+        textToSpeech(AIprompt(input("salemGPTVoice>")), "output")
 
+textToSpeech("Your image is beign processed", "error")
 
 # //python -m venv venv
 # source venv/bin/activate
