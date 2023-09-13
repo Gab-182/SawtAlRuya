@@ -1,0 +1,28 @@
+[W NNPACK.cpp:64] Could not initialize NNPACK! Reason: Unsupported hardware.
+0: 384x640 (no detections), 225.2ms
+0: 384x640 1 person, 172.3ms
+0: 384x640 1 person, 167.3ms
+0: 384x640 1 person, 165.8ms
+0: 384x640 1 person, 162.6ms
+0: 384x640 1 person, 163.1ms
+0: 384x640 1 person, 165.2ms
+0: 384x640 1 person, 163.5ms
+0: 384x640 1 person, 164.1ms
+0: 384x640 1 person, 164.7ms
+0: 384x640 1 person, 183.6ms
+0: 384x640 1 person, 161.6ms
+0: 384x640 1 person, 162.0ms
+0: 384x640 1 person, 162.1ms
+0: 384x640 1 person, 161.8ms
+0: 384x640 1 person, 160.7ms
+0: 384x640 1 person, 160.0ms
+0: 384x640 1 person, 162.7ms
+0: 384x640 1 person, 161.9ms
+0: 384x640 1 person, 161.1ms
+0: 384x640 1 person, 160.8ms
+0: 384x640 1 person, 1 cell phone, 160.0ms
+0: 384x640 1 person, 1 remote, 160.4ms
+0: 384x640 1 person, 1 remote, 162.0ms
+0: 384x640 1 person, 1 cell phone, 163.9ms
+0: 384x640 1 person, 1 cell phone, 163.3ms
+0: 384x640 1 person, 1 cell phone, 172.0ms
