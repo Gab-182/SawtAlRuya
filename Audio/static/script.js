@@ -20,20 +20,11 @@
 
 // static/script.js
 document.addEventListener('DOMContentLoaded', () => {
-    const audioSource = document.getElementById('audioSource');
-    
-    fetch('/')
-        .then(response => response.json())
-        .then(data => {
-            if (data.success) {
-                audioSource.src = data.audio_url;
-                audioSource.play(); // Play only if the audio file exists
-            } else {
-                console.error(data.error);
-                // Handle the case where the audio file doesn't exist
-            }
-        })
-        .catch((error) => {
-            console.error('Error:', error);
-        });
+    const audioElement = document.querySelector('audio');
+    audioElement.src = '/'; // Set the root route as the audio source
 });
+
+function playAudio() {
+    const audioElement = document.querySelector('audio');
+    audioElement.play();
+}

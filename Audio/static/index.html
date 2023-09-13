@@ -7,16 +7,10 @@
 </head>
 <body>
     <h1>SawtAlRoya</h1>
-    <!-- Added autoplay, preload, and muted attributes -->
-    <audio controls autoplay preload="auto" muted>
-        <source src="" id="audioSource" type="audio/mpeg">
+    <audio controls>
+        <source src="" type="audio/mpeg">
     </audio>
-    <button onclick="unmuteAudio()">Unmute Audio</button>
+    <button onclick="playAudio()">Play Audio</button>
     <script src="script.js"></script>
-    <script>
-        function unmuteAudio() {
-            document.querySelector('audio').muted = false;
-        }
-    </script>
 </body>
 </html>
