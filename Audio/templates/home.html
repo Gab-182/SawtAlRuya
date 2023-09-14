@@ -1,65 +1,38 @@
-<!-- <!DOCTYPE html>
-<html>
-<head>
-    <title>My Flask App</title>
-</head>
-<body>
-    <header>
-        <h1>Welcome to My Flask App</h1>
-    </header>
-    <nav>
-    </nav>
-    <main>
-        <h2>Home Page</h2>
-        <audio autoplay>
-            <source src="{{ audio_url }}" type="audio/mpeg">
-            Your browser does not support the audio element.
-
-        </audio>
-        <p>Hello, Shatha!</p>
-    </main>
-    <footer>
-        <p>&copy; 2023 My Flask App</p>
-    </footer>
-</body>
-</html> -->
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Sawt AlRuya</title>
-    <!-- Include any CSS or other head elements here -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sawt Elroya</title>
+    <style>
+        /* Apply styles to make the video cover the entire page */
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-color: "black";
+        }
+        video {
+            width: 100%;
+            height: 100%;
+            background-color: "black";
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Sawt AlRuya</h1>
-    </header>
-    <nav>
-        <!-- Navigation menu here -->
-    </nav>
-    <main>
-        <h2></h2>
-        <!-- Add an audio element with autoplay -->
-        <audio id="audioPlayer" autoplay>
-            <source src="{{ audio_url }}" type="audio/mpeg">
-            Your browser does not support the audio element.
-        </audio>
-        
-        <!-- Add a play button for manual control -->
-        <button onclick="toggleAudio()">Play/Pause</button>
-        
-    </main>
-
+    <video id="webcam" autoplay></video>
     
     <script>
-        // JavaScript function to toggle play/pause
-        function toggleAudio() {
-            var audio = document.getElementById('audioPlayer');
-            if (audio.paused) {
-                audio.play();
-            } else {
-                audio.pause();
-            }
-        }
+        navigator.mediaDevices.getUserMedia({ video: true })
+            .then(function (stream) {
+                var videoElement = document.getElementById('webcam');
+                videoElement.srcObject = stream;
+            })
+            .catch(function (error) {
+                console.error('Error accessing webcam:', error);
+            });
     </script>
 </body>
 </html>
