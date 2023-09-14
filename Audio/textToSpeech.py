@@ -20,7 +20,7 @@ def AIprompt(msg):
 def textToSpeech(text, filename):
     tts = gTTS(text)
     tts.save(filename + ".mp3")
-    # os.system("open " + filename + ".mp3")
+    os.system("open " + filename + ".mp3")
     return filename
 
 

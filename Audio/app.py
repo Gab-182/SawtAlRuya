@@ -9,8 +9,18 @@ from transformers import pipeline
 
 #--------------------------------------------------------------------------------------------------------------
 
-app = Flask(__name__)
-app.static_folder = 'static'
+# import assemblyai as aai
+# aai.settings.api_key = f"255ddc05361344aca456c1a40c9ba8d1"
+# FILE_URL = "https://github.com/AssemblyAI-Examples/audio-examples/raw/main/20230607_me_canadian_wildfires.mp3"
+# transcriber = aai.Transcriber()
+# transcript = transcriber.transcribe(FILE_URL)
+
+print(transcript.text)
+
+#--------------------------------------------------------------------------------------------------------------
+
+# app = Flask(__name__)
+# app.static_folder = 'static'
 
 #--------------------------------------------------------------------------------------------------------------
 
@@ -49,33 +59,49 @@ def generate_frames():
 
 #--------------------------------------------------------------------------------------------------------------
 
+
+#--------------------------------------------------------------------------------------------------------------
+
 # This function will generate the audio description from the text, and return a generator object that include the 
 # path of the audio file
 
 def generate_audio_description():
+    last_caption = None
+    
     for caption in generate_frames():
         print(f"the caption is => [{caption}]")
-        # textToSpeech(caption, 'frame')
+        print(f"the last_caption is => [{last_caption}]")
         
-        processed_audio_path = textToSpeech(caption, 'frame.jpg')
-        yield processed_audio_path
+        if caption != last_caption:
+            processed_audio_path = textToSpeech(caption, 'frame.jpg')
+            last_caption = caption
+        else:
+            processed_audio_path = None
+        # yield processed_audio_path
 
 #--------------------------------------------------------------------------------------------------------------
 
-error_audio = 'https://ideal-halibut-p4wvww97r5w2rqjv-5000.app.github.dev/static/error.mp3'
+# Calling the audio files from Ahmed part
+generate_audio_description()
 
-@app.route('/')
-def index():
-    audio_url = next(generate_audio_description())  # Get the audio URL from the generator
-    # Check if the processed audio file exists
-    if os.path.exists(audio_url):
-        audio_url = audio_url
-    else:
-        audio_url = error_audio
+#--------------------------------------------------------------------------------------------------------------
 
-    return render_template('home.html', audio_url=audio_url)
+# error_audio = 'https://ideal-halibut-p4wvww97r5w2rqjv-5000.app.github.dev/static/error.mp3'
 
-if __name__ == "__main__":
-    app.run(debug=True)
+# @app.route('/')
+# def index():
+#     audio_url = next(generate_audio_description())
+#     print(f"the audio url is => [{audio_url}]")
+    
+#     # Check if the processed audio file exists
+#     if os.path.exists(audio_url):
+#         audio_url = audio_url
+#     else:
+#         audio_url = error_audio
+
+#     return render_template('home.html', audio_url=audio_url)
+
+# if __name__ == "__main__":
+#     app.run(debug=True)
 
 #--------------------------------------------------------------------------------------------------------------
