@@ -15,7 +15,7 @@ from transformers import pipeline
 # transcriber = aai.Transcriber()
 # transcript = transcriber.transcribe(FILE_URL)
 
-print(transcript.text)
+# print(transcript.text)
 
 #--------------------------------------------------------------------------------------------------------------
 
