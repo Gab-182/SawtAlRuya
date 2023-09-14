@@ -7,6 +7,26 @@ from textToSpeech import textToSpeech
 from flask import send_file
 from transformers import pipeline
 
+import openai
+import os 
+# Set your API key
+api_key = os.environ.get('GPT')
+
+# Initialize the OpenAI client
+openai.api_key = api_key
+
+# Example prompt for text generation
+prompt = """who are you"""
+
+# Generate text using the API
+response = openai.Completion.create(
+    engine="text-davinci-002",
+    prompt=prompt,
+    max_tokens=50  # Adjust the number of tokens as needed
+)
+
+# Print the generated text
+print(response.choices[0].text)
 #--------------------------------------------------------------------------------------------------------------
 
 # import assemblyai as aai
@@ -19,8 +39,8 @@ from transformers import pipeline
 
 #--------------------------------------------------------------------------------------------------------------
 
-app = Flask(__name__)
-app.static_folder = 'static'
+# app = Flask(__name__)
+# app.static_folder = 'static'
 
 #--------------------------------------------------------------------------------------------------------------
 
@@ -77,31 +97,31 @@ def generate_audio_description():
             last_caption = caption
         else:
             processed_audio_path = None
-        yield processed_audio_path
+        # yield processed_audio_path
 
 #--------------------------------------------------------------------------------------------------------------
 
 # Calling the audio files from Ahmed part
-# generate_audio_description()
+generate_audio_description()
 
 #--------------------------------------------------------------------------------------------------------------
 
-error_audio = 'https://ideal-halibut-p4wvww97r5w2rqjv-5000.app.github.dev/static/error.mp3'
+# error_audio = 'https://ideal-halibut-p4wvww97r5w2rqjv-5000.app.github.dev/static/error.mp3'
 
-@app.route('/')
-def index():
-    audio_url = next(generate_audio_description())
-    print(f"the audio url is => [{audio_url}]")
+# @app.route('/')
+# def index():
+#     audio_url = next(generate_audio_description())
+#     print(f"the audio url is => [{audio_url}]")
     
-    # Check if the processed audio file exists
-    if os.path.exists(audio_url):
-        audio_url = audio_url
-    else:
-        audio_url = error_audio
+#     # Check if the processed audio file exists
+#     if os.path.exists(audio_url):
+#         audio_url = audio_url
+#     else:
+#         audio_url = error_audio
 
-    return render_template('home.html', audio_url=audio_url)
+#     return render_template('home.html', audio_url=audio_url)
 
-if __name__ == "__main__":
-    app.run(debug=True)
+# if __name__ == "__main__":
+#     app.run(debug=True)
 
 #--------------------------------------------------------------------------------------------------------------
