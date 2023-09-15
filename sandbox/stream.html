@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webcam Livestream</title>
+    <style>
+        /* Apply styles to make the video cover the entire page */
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-color: "black";
+        }
+        video {
+            width: 100%;
+            height: 100%;
+            background-color: "black";
+        }
+    </style>
+</head>
+<body>
+    <video id="webcam" autoplay></video>
+    
+    <script>
+        navigator.mediaDevices.getUserMedia({ video: true })
+            .then(function (stream) {
+                var videoElement = document.getElementById('webcam');
+                videoElement.srcObject = stream;
+            })
+            .catch(function (error) {
+                console.error('Error accessing webcam:', error);
+            });
+    </script>
+</body>
+</html>
