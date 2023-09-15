@@ -35,3 +35,38 @@ https://github.com/Gab-182/SawtAlRuya/assets/83855149/b88a9a21-b83c-4f45-acaa-6e
 
 </div>
 
+
+[![Repo Size](https://img.shields.io/github/repo-size/Gab-182/SawtAlRuya.svg)](https://github.com/Gab-182/SawtAlRuya)
+[![Lines of Code](https://img.shields.io/tokei/lines/github/Gab-182/SawtAlRuya.svg)](https://github.com/Gab-182/SawtAlRuya)
+[![GitHub stars](https://img.shields.io/github/stars/Gab-182/SawtAlRuya.svg)](https://github.com/Gab-182/SawtAlRuya/stargazers)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/Gab-182/SawtAlRuya/blob/main/LICENSE)
+[![GitHub pull requests](https://img.shields.io/github/issues-pr/Gab-182/SawtAlRuya.svg)](https://github.com/Gab-182/SawtAlRuya/pulls)
+[![GitHub last commit](https://img.shields.io/github/last-commit/Gab-182/SawtAlRuya.svg)](https://github.com/Gab-182/SawtAlRuya/commits/main)
+
+
+
+## Getting Started
+
+To run 'Sawt AlRu’ya' on your local machine, follow these simple steps:
+
+1. **Clone the Repository:**
+   ```
+     git clone https://github.com/Gab-182/SawtAlRuya
+   ```
+2. **Install Requirements:** 
+   ```
+     cd SawtAlRuya
+     ./requirements.sh
+   ```
+3. **Navigate to the 'Audio' Directory:**
+   ```
+     cd Audio
+   ```
+4. **Run the Application:**
+   ```
+     python3 app.py
+   ```
+
+This will start the 'Sawt AlRu’ya' application on your local machine.
+
+
