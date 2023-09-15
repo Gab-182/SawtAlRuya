@@ -27,15 +27,6 @@ response = openai.Completion.create(
 
 # Print the generated text
 print(response.choices[0].text)
-#--------------------------------------------------------------------------------------------------------------
-
-# import assemblyai as aai
-# aai.settings.api_key = f"255ddc05361344aca456c1a40c9ba8d1"
-# FILE_URL = "https://github.com/AssemblyAI-Examples/audio-examples/raw/main/20230607_me_canadian_wildfires.mp3"
-# transcriber = aai.Transcriber()
-# transcript = transcriber.transcribe(FILE_URL)
-
-# print(transcript.text)
 
 #--------------------------------------------------------------------------------------------------------------
 
