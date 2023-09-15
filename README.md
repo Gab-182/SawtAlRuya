@@ -36,7 +36,6 @@ In essence, our project combines state-of-the-art computer vision algorithms wit
 
 
 [![Repo Size](https://img.shields.io/github/repo-size/Gab-182/SawtAlRuya.svg)](https://github.com/Gab-182/SawtAlRuya)
-[![Lines of Code](https://img.shields.io/tokei/lines/github/Gab-182/SawtAlRuya.svg)](https://github.com/Gab-182/SawtAlRuya)
 [![GitHub stars](https://img.shields.io/github/stars/Gab-182/SawtAlRuya.svg)](https://github.com/Gab-182/SawtAlRuya/stargazers)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/Gab-182/SawtAlRuya/blob/main/LICENSE)
 [![GitHub pull requests](https://img.shields.io/github/issues-pr/Gab-182/SawtAlRuya.svg)](https://github.com/Gab-182/SawtAlRuya/pulls)
