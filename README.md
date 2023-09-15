@@ -33,7 +33,7 @@ https://github.com/Gab-182/SawtAlRuya/assets/83855149/b88a9a21-b83c-4f45-acaa-6e
 
 ---------------
 
-</div>
+
 
 
 [![Repo Size](https://img.shields.io/github/repo-size/Gab-182/SawtAlRuya.svg)](https://github.com/Gab-182/SawtAlRuya)
@@ -46,6 +46,9 @@ https://github.com/Gab-182/SawtAlRuya/assets/83855149/b88a9a21-b83c-4f45-acaa-6e
 
 
 ## Getting Started
+
+</div>
+
 
 To run 'Sawt AlRu’ya' on your local machine, follow these simple steps:
 
