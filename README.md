@@ -3,7 +3,7 @@
 ![SawtAlRuya_logo](https://github.com/Gab-182/SawtAlRuya/blob/main/assets/SawtAlRuya_logo.png)
 
 # SawtAlRuya 👁️‍🗨️
-## Using Computer Vision to Restore Vision for Individuals with Visual Impairments
+## Using Computer Vision to Empower Individuals with Visual Impairments and Blindness
 
 👁️‍🗨️ Computer vision hackathon project
 
